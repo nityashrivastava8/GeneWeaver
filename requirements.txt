@@ -1,0 +1,6 @@
+numpy>=1.24
+biopython>=1.81
+numba>=0.58
+textual>=0.50
+psutil>=5.9
+pytest>=7.4
