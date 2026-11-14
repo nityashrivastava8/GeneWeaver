@@ -29,6 +29,13 @@ pytest
 | `benchmark.py` | CPU vs GPU timing and result verification |
 
 
+## Progress
+- [x] Week 1: CPU baseline, parser, chunking, benchmark harness
+- [x] Week 2: CUDA kernel, host/device transfers, TUI scaffold
+- [ ] Week 3: Dask scaling, PAM-proximity scoring
+- [ ] Week 4: shared-memory optimisation, mismatch highlighting
+
+
 ## Benchmarks
 | Genome | CPU (s) | GPU (s) | Speedup |
 |---|---|---|---|
