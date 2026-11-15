@@ -18,6 +18,16 @@ python -m geneweaver.tui data/mock_genome.fa GACGCATAAAGATGAGACGC --backend gpu
 pytest
 ```
 
+## Features
+- FASTA ingestion and cleaning with BioPython
+- Overlapping chunking so no site is missed at a chunk boundary
+- Pure-Python CPU baseline for correctness checks and timing reference
+- Numba `@cuda.jit` kernel: one GPU thread per genome position
+- Benchmark harness that times both backends and verifies identical results
+- Textual TUI with progress bars (GPU stats panel coming in Week 3)
+- Mock genome generator with planted off-target sites
+
+
 ## Structure
 | Path | Purpose |
 |---|---|
