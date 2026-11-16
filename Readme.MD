@@ -10,6 +10,20 @@ pip install -r requirements.txt
 ```
 Requires an NVIDIA GPU + CUDA toolkit for GPU mode. CPU mode works anywhere.
 
+Table of Contents
+Features
+How It Works
+Architecture
+Setup
+Usage
+Testing
+Project Structure
+Design Decisions
+Limitations
+Troubleshooting
+Roadmap
+Benchmarks
+
 ## Usage
 ```bash
 python generate_mock_genome.py --size-mbp 10
