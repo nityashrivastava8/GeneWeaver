@@ -24,6 +24,15 @@ Troubleshooting
 Roadmap
 Benchmarks
 
+
+How It Works
+Parse: read each FASTA record, uppercase it, and encode bases as uint8 (A=0, C=1, G=2, T=3, anything else such as N = 4).
+Chunk: split each chromosome into fixed-size chunks that overlap by pattern_length - 1 (22 bp), so every possible site lies fully inside exactly one chunk.
+Align: for each window, check the PAM first (positions 21-23 must be NGG), then count mismatches against the guide, stopping early once the limit is exceeded.
+Collect: convert chunk-local positions to chromosome positions and report (chromosome, position, mismatches) for every hit.
+
+On the GPU, step 3 runs for all windows of a chunk in parallel. Host-to-device copies and kernel launches use preallocated buffers that are reused for every chunk.
+
 ## Usage
 ```bash
 python generate_mock_genome.py --size-mbp 10
