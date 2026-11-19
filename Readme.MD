@@ -33,13 +33,6 @@ Collect: convert chunk-local positions to chromosome positions and report (chrom
 
 On the GPU, step 3 runs for all windows of a chunk in parallel. Host-to-device copies and kernel launches use preallocated buffers that are reused for every chunk.
 
-## Usage
-```bash
-python generate_mock_genome.py --size-mbp 10
-python benchmark.py data/mock_genome.fa --mode both
-python -m geneweaver.tui data/mock_genome.fa GACGCATAAAGATGAGACGC --backend gpu
-pytest
-```
 
 ## Features
 - FASTA ingestion and cleaning with BioPython
